@@ -35,14 +35,14 @@ init_payload = \
 
 ##############################################################################################
 
-init_request = requests.post(init_url, data=init_payload)
-auth_request = requests.post(auth_type, json=auth_payload, headers=header.var)
+# init_request = requests.post(init_url, data=init_payload)
+# auth_request = requests.post(auth_type, json=auth_payload, headers=header.var)
 login_request = requests.post(api_login, json=login_payload, headers=header.var)
 
 # print codes
-print(init_request)
-print(init_request.json())
-print(auth_request)
-print(auth_request.json())
+# print(init_request)
+# print(init_request.json())
+# print(auth_request)
+# print(auth_request.json())
 print(login_request)
 print(login_request.json())
