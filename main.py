@@ -1,4 +1,5 @@
 import requests
+import header
 import json
 
 ##############################################################################################
@@ -35,10 +36,13 @@ init_payload = \
 ##############################################################################################
 
 init_request = requests.post(init_url, data=init_payload)
-auth_request = requests.post(auth_type, data=auth_payload)
-# login_request = requests.post(api_login, data=login_payload)
-#
+auth_request = requests.post(auth_type, json=auth_payload, headers=header.var)
+login_request = requests.post(api_login, json=login_payload, headers=header.var)
+
+# print codes
+print(init_request)
 print(init_request.json())
 print(auth_request)
-print(auth_request.text)
-# print(login_request)
+print(auth_request.json())
+print(login_request)
+print(login_request.json())
