@@ -1,5 +1,5 @@
 import requests
-import header
+import pprint
 import json
 
 ##############################################################################################
@@ -33,11 +33,18 @@ init_payload = \
         "app_version": "2.22.1"
     }
 
+main_headers = \
+    {
+        "x-px-authorization": "3",
+        "wm_consumer.id": 'a9ca7a88-d09d-4ae6-851b-1bc5585bce2c',
+        "user-agent": "Dalvik/2.1.0 (Linux; U; Android 5.1.1; ASUS_I001DA Build/LMY49I)",
+        "wm_tenant_id": "0",
+    }
 ##############################################################################################
 
 # init_request = requests.post(init_url, data=init_payload)
 # auth_request = requests.post(auth_type, json=auth_payload, headers=header.var)
-login_request = requests.post(api_login, json=login_payload, headers=header.var)
+login_request = requests.post(api_login, json=login_payload, headers=main_headers)
 
 # print codes
 # print(init_request)
@@ -45,4 +52,4 @@ login_request = requests.post(api_login, json=login_payload, headers=header.var)
 # print(auth_request)
 # print(auth_request.json())
 print(login_request)
-print(login_request.json())
+pprint.pprint(login_request.json())
